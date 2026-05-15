@@ -1,70 +1,163 @@
 import type { Metadata } from "next";
-import { ClaimForm } from "./_components/claim-form";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "100 PLN do reklam — Newcomer Boost · fash-n-feshyn",
+  title: "100 PLN do reklam — Newcomer Boost · panel sprzedawcy",
   description:
-    "Bezpłatny budżet na promowanie listingów dla nowych sprzedawców (months 1-3). 60 dni na wykorzystanie. Zarezerwuj zanim ruszymy.",
+    "Bezpłatny budżet na promowanie listingów dla nowych sprzedawców (months 1-3). 60 dni na wykorzystanie.",
 };
 
 export default function NewcomerBoostPage() {
   return (
-    <main className="bg-white text-black">
-      <section className="max-w-3xl mx-auto px-6 py-16 md:py-24">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-[#5C6169] mb-4">
-          Dla nowych sprzedawców · pilot sierpień 2026
-        </p>
-        <h1 className="text-[32px] md:text-[44px] font-normal leading-tight text-black mb-6">
-          100 PLN do reklam.
-          <br />
-          <span className="font-semibold">Twój pierwszy miesiąc na fashion-marketplace.</span>
-        </h1>
-        <p className="text-[16px] md:text-[18px] leading-7 text-black/85 mb-10 max-w-2xl">
-          Pierwsze 30 dni jako sprzedawca są najtrudniejsze — Twoje produkty
-          &quot;siedzą&quot; w katalogu i nikt ich nie znajduje. Daj nam wiedzieć, że
-          jesteś zainteresowany — gdy uruchomimy program{" "}
-          <strong className="font-semibold">Newcomer Boost</strong>, dostaniesz
-          100 PLN budżetu na <span className="whitespace-nowrap">Promoted Listings</span>,
-          ważne przez 60 dni od aktywacji konta.
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="border border-[#D2D8DD] p-5">
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-[#5C6169] mb-2">
-              Co dostajesz
-            </p>
-            <p className="text-[16px] leading-6 text-black">
-              100 PLN do wydania na Promoted Listings — bez zaliczki, bez karty.
-            </p>
-          </div>
-          <div className="border border-[#D2D8DD] p-5">
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-[#5C6169] mb-2">
-              Kto się kwalifikuje
-            </p>
-            <p className="text-[16px] leading-6 text-black">
-              Nowi sprzedawcy z aktywnym kontem ≤ 3 miesiące i ≥ 5 listingami.
-            </p>
-          </div>
-          <div className="border border-[#D2D8DD] p-5">
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-[#5C6169] mb-2">
-              Kiedy startujemy
-            </p>
-            <p className="text-[16px] leading-6 text-black">
-              Pilot rusza w sierpniu 2026. Zarezerwowane miejsca pierwszeństwa.
-            </p>
-          </div>
+    <main className="bg-cream-light text-charcoal">
+      {/* Breadcrumb — implies seller panel context */}
+      <div className="border-b border-cream-dark bg-white">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray">
+            Panel sprzedawcy · Promocje
+          </p>
         </div>
+      </div>
 
-        <div className="border-t border-[#D2D8DD] pt-10">
-          <h2 className="text-[20px] font-semibold mb-2">Zarezerwuj 100 PLN BOOST</h2>
-          <p className="text-[14px] text-[#5C6169] mb-6">
-            Wypełnij — odezwiemy się gdy ruszamy. Bez spamu, bez subskrypcji.
+      {/* Hero */}
+      <section className="px-4 md:px-8 lg:px-12 py-12 md:py-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray mb-5">
+            Nowy program dla newcomer sprzedawców · Sierpień 2026
           </p>
-          <ClaimForm />
-          <p className="text-[12px] text-[#5C6169] mt-4">
-            Twoje dane lądują w Formspree (third-party). Możesz w każdej chwili
-            poprosić o usunięcie — odpisując na maila potwierdzającego.
+          <h1 className="text-[36px] md:text-[48px] font-normal text-charcoal mb-6 leading-[1.05]">
+            100 PLN na reklamy.<br />Twój pierwszy miesiąc.
+          </h1>
+          <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-10 max-w-2xl mx-auto">
+            Pierwsze 30 dni jako sprzedawca są najtrudniejsze — produkty nikt
+            nie znajduje. Włącz program <strong className="font-medium text-charcoal">Newcomer Boost</strong>,
+            a my dorzucimy <strong className="font-medium text-charcoal">100 PLN budżetu</strong> na Promoted
+            Listings.
           </p>
+
+          {/* Primary CTA — click-to-activate */}
+          <Link
+            href="/newcomer-boost/thanks"
+            prefetch={false}
+            className="btn-cta inline-flex !text-[13px] !px-10 !py-3.5"
+          >
+            Aktywuj 100 PLN BOOST
+          </Link>
+          <p className="text-[12px] text-warm-gray mt-4">
+            Jedno kliknięcie · Zero zaliczki · Zero karty
+          </p>
+        </div>
+      </section>
+
+      {/* 3-up stats — Allbirds-templatka section pattern */}
+      <section className="bg-cream border-t border-b border-cream-dark px-4 md:px-8 lg:px-12 py-12 md:py-14">
+        <div className="max-w-5xl mx-auto">
+          <dl className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 text-center">
+            <div>
+              <dt className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray mb-2">
+                Budżet
+              </dt>
+              <dd className="text-[36px] font-normal text-charcoal mb-1 leading-none">
+                100 PLN
+              </dd>
+              <p className="text-[13px] leading-5 text-warm-gray mt-2">
+                na Promoted Listings — bez karty
+              </p>
+            </div>
+            <div className="md:border-l md:border-r md:border-cream-dark md:px-8">
+              <dt className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray mb-2">
+                Wymagania
+              </dt>
+              <dd className="text-[36px] font-normal text-charcoal mb-1 leading-none">
+                ≤ 3 mies.
+              </dd>
+              <p className="text-[13px] leading-5 text-warm-gray mt-2">
+                aktywne konto + 5 listingów
+              </p>
+            </div>
+            <div>
+              <dt className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray mb-2">
+                Ważność
+              </dt>
+              <dd className="text-[36px] font-normal text-charcoal mb-1 leading-none">
+                60 dni
+              </dd>
+              <p className="text-[13px] leading-5 text-warm-gray mt-2">
+                od momentu aktywacji
+              </p>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="px-4 md:px-8 lg:px-12 py-12 md:py-16">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-[24px] md:text-[28px] font-normal text-charcoal text-center mb-10">
+            Jak to działa
+          </h2>
+          <ol className="space-y-6 max-w-xl mx-auto">
+            <li className="flex gap-5">
+              <span className="text-[14px] font-medium text-charcoal/60 mt-0.5 shrink-0 w-6">
+                01
+              </span>
+              <div>
+                <p className="text-[15px] font-medium text-charcoal mb-1">
+                  Klikasz &quot;Aktywuj&quot;
+                </p>
+                <p className="text-[14px] leading-6 text-warm-gray">
+                  Twój wniosek o BOOST trafia na listę. Pierwsze 100 zgłoszeń
+                  dostaje kod aktywacyjny w sierpniu.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-5">
+              <span className="text-[14px] font-medium text-charcoal/60 mt-0.5 shrink-0 w-6">
+                02
+              </span>
+              <div>
+                <p className="text-[15px] font-medium text-charcoal mb-1">
+                  Wystarczy, że masz konto ≤ 3 miesiące + 5 aktywnych listingów
+                </p>
+                <p className="text-[14px] leading-6 text-warm-gray">
+                  Sprawdzamy automatycznie z panelu. Brak dodatkowych formularzy.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-5">
+              <span className="text-[14px] font-medium text-charcoal/60 mt-0.5 shrink-0 w-6">
+                03
+              </span>
+              <div>
+                <p className="text-[15px] font-medium text-charcoal mb-1">
+                  Ruszasz Promoted Listings — koszt z BOOST budżetu
+                </p>
+                <p className="text-[14px] leading-6 text-warm-gray">
+                  100 PLN starcza średnio na 200-400 wyświetleń listingu w
+                  Twojej kategorii. Mierzysz wyniki w panelu reklam.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      {/* CTA repeat — bottom of page */}
+      <section className="bg-charcoal text-white px-4 md:px-8 lg:px-12 py-12 md:py-14">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-white/60 mb-4">
+            Jedno kliknięcie · Zero zaliczki
+          </p>
+          <h2 className="text-[24px] md:text-[28px] font-normal mb-6">
+            Gotowy zaktywować swój BOOST?
+          </h2>
+          <Link
+            href="/newcomer-boost/thanks"
+            prefetch={false}
+            className="btn-cta-outline !text-[13px] !px-10 !py-3.5 inline-flex !bg-white !text-charcoal !border-white hover:!bg-cream-light"
+          >
+            Aktywuj 100 PLN BOOST
+          </Link>
         </div>
       </section>
     </main>

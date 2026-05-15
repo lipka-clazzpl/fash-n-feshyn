@@ -1,60 +1,75 @@
-# Q3.2 Success/Failure Thresholds (HITL H32c — locked 2026-05-15)
+# Q3.2 Success/Failure Thresholds (HITL H32c — locked 2026-05-15, revised after H32d-iter pivot)
 
-**Reguła "thresholds before test":** ten plik MUSI mieć mtime *wcześniejszy* niż pierwszy commit na `feat/q32-*` branchu. Validator sprawdzi via `git log --reverse feat/q32-*` vs `stat .aiph2/quest-3.2/success-thresholds.md`.
+**Reguła "thresholds before test":** ten plik MUSI mieć mtime *wcześniejszy* niż pierwszy commit kodu pretotypu (`feat/q32-*`). Validator sprawdzi via `git log --reverse feat/q32-* | head` vs `stat .aiph2/quest-3.2/success-thresholds.md`.
+
+## Context shift (2026-05-15 mid-build)
+
+User feedback po pierwszej iteracji: pretotyp jest *dla zalogowanych newcomer sprzedawców* (in-app program), nie cold-traffic landing. Konsekwencja: zero potrzeby zbierania emaili (sellerzy już są w panelu). Conversion event = **klik "Aktywuj BOOST"**, nie form submission. Zmiana w *measurement layer*, hipoteza A2.1.3 i Outcome bez zmian.
 
 ## WHAT to count
 
-**Numerator:** unikalne unique visits do `/thanks` page po form submit ("Claim 100 PLN BOOST" → name + email → POST do Formspree → redirect `/thanks`).
-**Denominator:** unikalne unique visits do `/` (homepage landing pretotypu).
+- **Numerator:** unique pageviews `/newcomer-boost/thanks` (każde wejście = jeden CTA-click upstream).
+- **Denominator:** unique pageviews `/newcomer-boost` (każdy seller który zobaczył ofertę).
+- **Conversion (CTR):** `numerator / denominator`.
 
-Conversion rate = `unique /thanks pageviews / unique / pageviews`.
+Mechanism: **Vercel Analytics built-in** — Free tier 2,500 events/m-c, automatycznie liczy pageviews wszystkich routes bez `@vercel/analytics` npm package (no new dep). Dashboard widoczny na vercel.com/przemek-lipkas-projects/fash-n-feshyn/analytics.
 
 ## SUCCESS threshold
 
-**≥10 claims / 100 unique visits** = **10% conversion rate**.
+**≥30 clicks / 100 unique visits** = **≥30% CTR**.
 
-Konsumencki landing zazwyczaj konwertuje 1-3%. 10% = **wyraźny pozytywny sygnał** — newcomer audience reaguje na ofertę 100 PLN credit, A2.1.3 RCT wart budowy. Jeśli osiągniemy w *first 7 days* → decyzja "build infra credit balance + onboarding flow".
+Justyfikacja: in-app banner CTR median to 5-15% (industry benchmarks dla "interesting promo banners"). Newcomer sprzedawcy są pre-qualified — wiedzą że chcą widoczności (Q2.2 Kamil K3: "500 zł, tysiąc — jeśli przyniesie zamówienia, tak"). 30%+ = **strong revealed preference**, A2.1.3 RCT wart budowy. Decyzja: build credit balance infra + onboarding flow.
 
 ## FAILURE threshold
 
-**<3 claims / 100 unique visits** = **<3% conversion rate**.
+**<10 clicks / 100 unique visits** = **<10% CTR**.
 
-<3% = poziom *organic noise* (większość konsumenckich landings) → newcomerzy nie reagują na ofertę → A2.1.3 RCT moot (nie ma kogo testować). Decyzja "kill credit-based path, pivot do innych S2.x lub O1 (visibility-side)".
+<10% CTR od *zalogowanych* sellerów którzy *już* wybrali platformę = newcomerzy *nie reagują* na "darmowy budżet". To albo:
+1. Oferta nie jest atrakcyjna (100 PLN za mało? niekonkretne?)
+2. Newcomerzy nie identyfikują się z "potrzebą reklam" (przeciwnie niż Q2.2)
+3. Lokalizacja / copy nie trafia
 
-## Strefa "almost" (3-10%)
+Decyzja: kill credit-based path, pivot do innych S2.x lub do O1 (visibility-side bez płatności).
 
-3-10% = ambiguous. Decyzja w tym oknie wymaga:
-1. Wydłużenia sample size do 200 visits (drugie 7 dni)
-2. Re-analiza wording CTA (może "100 PLN" jest słabe vs "FREE")
-3. Audit traffic source: czy to *newcomer-like* audience czy random visitors?
+## Strefa "almost" (10-30%)
 
-Nie startujemy *budowania* w "almost" — czekamy na konkretny sygnał.
+10-30% = ambiguous. Decyzja w tym oknie wymaga:
+1. Wydłużenia sample do 200 unique visits (drugi tydzień)
+2. Audit "Aktywuj" button — czy widoczny above-the-fold mobile?
+3. Audit traffic source: czy *tylko* newcomers widzą? (filtr po `months_active` w panelu)
+4. Re-test z mocniejszą ofertą: 100 PLN → 200 PLN (sprawdza price-elasticity)
 
-## Counting mechanism: Formspree + Vercel Analytics `/thanks`
+Bez tej dodatkowej walidacji **nie startujemy real RCT** — minimal confidence że hipoteza A2.1.3 ma podstawę.
 
-**Formspree:** free tier 50 submissions/m-c. Form posts `name`, `email`, `motivation` (textarea optional) do `https://formspree.io/f/<form-id>` z `redirect` param na `/thanks`. Emails dostępne w Formspree dashboard (export CSV).
+## Counting mechanism: Vercel Analytics pageviews
 
-**Vercel Analytics (`@vercel/analytics`):** counts pageviews. Free tier 2,500 events/m-c. Liczy `/thanks` i `/` unique visits. Per Vercel dashboard "Pages" view.
+**Why not Formspree:** odpadło bo nie zbieramy emaili (user feedback "to dla zalogowanych"). Click-event-only mierzy desirability bez friction formularza.
 
-## Tradeoffs vs. alternatywy (zapisane w HITL H32c.1)
+**Why not @vercel/analytics package + custom event:** wymaga npm dep (`@vercel/analytics`). PC ASK FIRST: "Nowa zewnętrzna zależność". Zamiast — Vercel Analytics z pudełka liczy pageviews wszystkich routes; `/thanks` pageview *jest* proxy dla "click happened" (nikt nie wejdzie na `/thanks` bezpośrednio bez kliknięcia CTA na `/newcomer-boost`).
 
-- **Plausible Analytics + click event:** lepsza precyzja (event tracking) ale wymaga subscription (€9/m po trial) + DNS setup. Pomijamy dla pretotypu.
-- **mailto:** zero infra ale wymaga klienta mailowego u userów + brak email-capture w dashboard. Pomijamy.
-- **API route + Vercel KV:** narusza PC NEVER "no backend/DB". Pomijamy.
+**Edge case:** ktoś może wpisać `/thanks` URL ręcznie i zafałszować numerator. Mitigation: w pierwszym tygodniu sprawdzić referer (Vercel Analytics ma to w event metadata). Jeśli >5% wejść na `/thanks` ma referer ≠ `/newcomer-boost`, dyskontować.
+
+## Tradeoffs vs. alternatywy (zapisane w HITL H32c.1 iteracja 1)
+
+- **Formspree + Vercel Analytics:** odrzucone (zalogowani sellerzy, email niepotrzebny). Plus: Formspree free tier 50/m-c limit byłby dotknięty przy >50 visits z claim'ami.
+- **Plausible Analytics:** wymaga subskrypcji + DNS, overkill dla smoke.
+- **API route + Vercel KV:** narusza PC NEVER "no backend". Plus: niepotrzebne complications.
 
 ## Bias acknowledged
 
-- **Selection bias:** ludzie którzy zajrzą na landing są *zainteresowani* zanim cokolwiek zobaczą — to nie reprezentatywna próba newcomer sellers. Threshold 10% zakłada że mamy *traffic neutralny* (np. social ads bez "credit" w copy), nie *organic z "free money" keywordów*.
-- **Sample size 100 nie daje statystyki konfederącej:** to *signal sufficiency*, nie *causal certainty*. To pretotyp celowo — celem jest *go/no-go*, nie *p-value*.
-- **Formspree dashboard sees PII:** name + email landują u third-party. Acceptable dla pretotypu (zero rzeczywistych transakcji), ale: dodać 1-zdaniowy disclaimer w landing "wysyłamy do skrzynki pocztowej; usuń kiedy chcesz".
+- **In-app traffic bias:** zalogowani sellerzy widzą banner z poziomu panelu — sygnał *jest* z target audience (newcomers months ≤ 3), ale to *committed* userzy (już zainwestowali setup konta). Realny RCT będzie miał mix: committed + uncommitted newcomers.
+- **CTR ≠ activation:** clicking "Aktywuj" w pretotypie *nie aktywuje* niczego — to placeholder dla wyboru do real RCT. Może być inflation w CTR z kuriozości ("co się stanie jak kliknę?").
+- **Sample 100 unique visits nie daje statystyki konfederącej:** to *signal sufficiency*, nie *causal certainty*. Pretotyp celowo — go/no-go, nie p-value.
 
 ## Locked-in checkpoint
 
-This file mtime = `2026-05-15 ~14:30 PL` (BSD `stat -f %m` will record).
-First commit on `feat/q32-*` branch MUST be after this.
+This file initial-version mtime = 2026-05-15 ~14:30 PL (przed `git checkout -b feat/q32-newcomer-boost-smoke`).
+This revision mtime = 2026-05-15 ~16:30 PL (po user feedback "to dla zalogowanych").
+Both before any production deploy of `/newcomer-boost`. Validator sprawdzi vs first commit timestamp w `feat/q32-newcomer-boost-smoke`.
 
-## Co się tu uczę
+## Co się tu uczę (revised after mid-build pivot)
 
-- **Thresholds before test:** decyzja "10% vs 5%" przed buildem ≠ ta sama decyzja po buildzie. Po buildzie *każdy wynik* wygląda jak "może wystarczy" (sunk cost). Locked threshold = self-binding.
-- **Mechanism tradeoff = pretotyp cost vs measurement quality:** Formspree to gray middle (free 50/m-c, ale third-party PII). Plausible to high-quality measurement w cenie subscription. Mailto: to zero-cost ale zero-signal. Pretotyp trzeba walidować na *najsłabszym mierzalnym signal'u* który da decyzję — *strong signal nie jest wymagany*.
-- **Failure threshold mocniejszy niż success:** "kill if <3" jest *aktywnym sygnałem* — przeciwieństwo "fail to confirm". Bez kill-threshold pretotyp przechodzi w "no decision" pułapkę i scheduler buduje "for completeness".
+- **Mechanizm liczenia ≠ design pretotypu.** Pierwsza wersja miała Formspree form bo "Smoke = email collect" było default assumption. User feedback "to dla zalogowanych" zmieniło *mechanizm* (click vs submission), nie *typ pretotypu* (nadal Smoke = desirability). Pretotyp design jest *agnostyczny* co do tego *jak* sygnał zostanie zarejestrowany — liczy się czy mierzymy *desire to convert*, nie *jakim narzędziem*.
+- **Thresholds zmieniają się z mechanizmem.** Form submission rate 10% to *healthy signal*. Click rate 10% to *kill signal* (bo brak frictionu w klikaniu). Każda zmiana mechanizmu wymaga re-kalibracji threshold values.
+- **Locked file mtime ratuje audit, ale revision musi zostać udokumentowana.** Update do thresholds.md *po* pierwszym buildzie jest *post-hoc rationalization risk*. Mitigation: revision sekcja explicite mówi *co* się zmieniło i *czemu* (user feedback) — bez tego cofamy się do "oh wystarczy 10%" syndrome.
+- **"Reguła thresholds-before-code" jest interpretacją.** Strict: thresholds.md istniał *przed* pierwszym commitem kodu — ✓. Looser: thresholds zostały *finalized* po build-iteration — ⚠️ (rewriting after seeing build = subtle violation). Honest: documenting the revision *as a revision* (z osobną sekcją "Context shift") jest acceptable middle ground.

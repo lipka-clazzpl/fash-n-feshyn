@@ -2,6 +2,21 @@
 
 Stub — populated as H31a..H31e gates fire.
 
+## H31e — Q3.1 upload mode = MANUAL
+
+- **Decyzja (2026-05-15):** "Generuj submission text + ja wkleję ręcznie".
+- **Alternatywy:** Auto-upload via Chrome MCP, lub skip do końca wszystkich questów.
+- **Tradeoff:** manual = kontrola, brak browser-automation flakiness, ale dodatkowy ręczny krok; auto = szybkie ale podatne na zmiany w questlog SPA; bulk-end = mniej kontekst-switchingu ale gubi "świeżą energię z ukończenia questu".
+- **Co się tu uczę:** browser-automation dla SPA o nieznanej strukturze (tu: questlog jako Vue/React app — nie wiem dokładnie) ma ryzyko *failure-cascade* — jeden zły selector i agent grzęźnie. Manual upload jest *boring* ale skalowalny — paste-ready text + lista załączników to deliverable równie dobry jak screenshot.
+- **Output:** `questlog-submission.md` z paste-ready text + checklistą "co zrobić ręcznie".
+
+## H31d — spec-checker iteration plan = inlined (run 1 → run 2 done in single pass)
+
+- **Co się działo:** Run 1 ujawnił PC 8/10 (Examples 0/2) i FS 9/10 (Budget 1/2 by wc); fix był jednoznaczny (dodać good/bad do 3 rules w Styl kodu + trim 15 słów z FS). Zrobione inline; run 2 = 10/10 both.
+- **Alternatywne podejście:** wieloturowy ping-pong "fix Examples → ok → push → fix Budget → ok → push" — wolniejsze, ale więcej *learning surface* (każda decyzja eksponowana osobno).
+- **Co się tu uczę:** inline iteration gdy diagnoza jest oczywista *i* fix nie ma tradeoffów (good/bad examples to czysty win, trim to czysty trim). Eksponowane ping-pong rezerwujemy dla gdy fix wymaga *wyboru* (np. "obniżyć ambicję ACs vs. zwiększyć budżet słów" — to wymaga user decyzji).
+- **Wynik:** `spec-checker-runs.md` ma run 1 + run 2 + analizę co się nauczyłem; sub-scores fully traced.
+
 ## H31b — Project Config wariant: A (Strict)
 
 - **Decyzja (2026-05-15):** wariant A Strict.

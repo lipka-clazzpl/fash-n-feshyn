@@ -2,55 +2,73 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Zarezerwowane ✓ — Newcomer Boost · fash-n-feshyn",
-  description: "Twoja rezerwacja 100 PLN BOOST jest zapisana.",
+  title: "Aktywowane ✓ — Newcomer Boost · panel sprzedawcy",
+  description: "Twój BOOST został aktywowany.",
 };
 
 export default function ThanksPage() {
   return (
-    <main className="bg-white text-black">
-      <section className="max-w-2xl mx-auto px-6 py-24 md:py-32 text-center">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-[#DA0410] mb-4">
-          Status: zarezerwowane
-        </p>
-        <h1 className="text-[32px] md:text-[44px] font-normal leading-tight text-black mb-6">
-          Zarezerwowane{" "}
-          <span aria-hidden className="text-[#5C6169]">
-            ✓
-          </span>
-        </h1>
-        <p className="text-[16px] md:text-[18px] leading-7 text-black/85 mb-10 max-w-xl mx-auto">
-          Skontaktujemy się gdy uruchomimy program{" "}
-          <strong className="font-semibold">Newcomer Boost</strong> (pilot
-          sierpień 2026). Pierwsze 100 osób na liście dostanie kod aktywacyjny
-          mailem.
-        </p>
-
-        <div className="border-t border-[#D2D8DD] pt-10 text-left">
-          <h2 className="text-[20px] font-semibold mb-4">Co dalej</h2>
-          <ol className="space-y-3 text-[16px] leading-6 text-black">
-            <li>
-              <strong>1.</strong> Otrzymasz potwierdzenie mailem na adres,
-              który podałeś.
-            </li>
-            <li>
-              <strong>2.</strong> Gdy ruszymy w sierpniu — wyślemy kod do
-              aktywacji 100 PLN budżetu w Twoim panelu sprzedawcy.
-            </li>
-            <li>
-              <strong>3.</strong> Kod ważny 60 dni. Wystartuj Promoted
-              Listings — koszt reklam idzie z budżetu, nie z karty.
-            </li>
-          </ol>
+    <main className="bg-cream-light text-charcoal">
+      <div className="border-b border-cream-dark bg-white">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-3">
+          <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray">
+            Panel sprzedawcy · Promocje · BOOST
+          </p>
         </div>
+      </div>
 
-        <div className="mt-12">
-          <Link
-            href="/newcomer-boost"
-            className="text-[14px] text-[#5C6169] underline underline-offset-4 hover:text-black"
-          >
-            ← Wróć na stronę programu
-          </Link>
+      <section className="px-4 md:px-8 lg:px-12 py-20 md:py-28">
+        <div className="max-w-2xl mx-auto text-center">
+          <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray mb-5">
+            Status · Zarezerwowane
+          </p>
+          <h1 className="text-[36px] md:text-[44px] font-normal text-charcoal mb-5 leading-[1.05]">
+            Zarezerwowane ✓
+          </h1>
+          <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-12 max-w-xl mx-auto">
+            Twoje miejsce w programie{" "}
+            <span className="font-medium text-charcoal">Newcomer Boost</span> jest
+            zapisane. Kod aktywacyjny pojawi się w panelu sprzedawcy gdy ruszamy
+            w sierpniu 2026.
+          </p>
+
+          <div className="bg-white border border-cream-dark rounded-lg p-6 md:p-8 text-left max-w-xl mx-auto mb-10">
+            <h2 className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray mb-4">
+              Co dalej
+            </h2>
+            <ol className="space-y-4 text-[15px] leading-6 text-charcoal">
+              <li className="flex gap-3">
+                <span className="font-medium text-charcoal/60 shrink-0">01</span>
+                <span>
+                  Twój status zmieni się na &quot;Aktywowany&quot; gdy program ruszy
+                  (sierpień 2026, plus-minus 2 tygodnie).
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-medium text-charcoal/60 shrink-0">02</span>
+                <span>
+                  Powiadomimy Cię w panelu i mailem — z kodem aktywacyjnym
+                  100 PLN.
+                </span>
+              </li>
+              <li className="flex gap-3">
+                <span className="font-medium text-charcoal/60 shrink-0">03</span>
+                <span>
+                  Kod ważny 60 dni. Wystartuj Promoted Listings — koszt reklam
+                  idzie z budżetu, nie z karty.
+                </span>
+              </li>
+            </ol>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/newcomer-boost" className="btn-cta-outline inline-flex !text-[13px]">
+              ← Wróć do programu
+            </Link>
+            <Link href="/" className="btn-cta inline-flex !text-[13px]">
+              Panel sprzedawcy
+            </Link>
+          </div>
         </div>
       </section>
     </main>
