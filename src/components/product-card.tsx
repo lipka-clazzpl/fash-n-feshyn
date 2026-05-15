@@ -91,34 +91,34 @@ export function ProductCard({ product, className }: ProductCardProps) {
                 e.stopPropagation();
                 openQuickView(product);
               }}
-              className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/90 px-4 py-2 text-[10px] font-medium uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden md:block hover:bg-white z-10"
+              className="absolute bottom-3 left-1/2 -translate-x-1/2 bg-white/95 text-black px-4 py-2 text-[11px] font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden md:block hover:bg-white z-10"
             >
-              QUICK VIEW
+              Podgląd
             </button>
           </div>
         </Link>
 
         {/* Wishlist button — top-right, shows on hover */}
         <div className="absolute top-3 right-3 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-200 md:block hidden">
-          <WishlistButton productId={product.id} className="bg-white/90 rounded-full p-1.5 hover:bg-white" />
+          <WishlistButton productId={product.id} className="bg-white/95 p-1.5 hover:bg-white" />
         </div>
       </div>
 
       <Link href={`/products/${product.slug}`} className="block">
-        {/* Product info */}
+        {/* Product info — Zalando editorial: 16px baseline, weight 400 (name) vs 650 (price) */}
         <div>
-          <h3 className="text-[12px] font-medium uppercase tracking-[0.5px] mb-0.5">
+          <h3 className="text-[16px] font-normal leading-6 text-black mb-0.5">
             {product.name}
           </h3>
-          <p className="text-[12px] text-warm-gray mb-0.5">{firstColor?.name}</p>
+          <p className="text-[14px] text-[#5C6169] leading-5 mb-0.5">{firstColor?.name}</p>
           {seller && (
-            <p className="text-[11px] text-warm-gray/70 mb-1">
-              Sold by{" "}
-              <span className="text-charcoal/60 hover:text-charcoal transition-colors">
+            <p className="text-[12px] text-[#5C6169]/80 mb-1">
+              Sprzedaje{" "}
+              <span className="text-black/70 hover:text-black transition-colors">
                 {seller.name}
               </span>
               {seller.rating >= 4.5 && (
-                <span className="inline-block ml-1 text-[9px] bg-charcoal/10 text-charcoal/70 px-1 py-0.5 rounded uppercase tracking-wide">
+                <span className="inline-block ml-1 text-[10px] bg-black/8 text-black/80 px-1 py-0.5 uppercase tracking-wide">
                   Pro
                 </span>
               )}
@@ -127,24 +127,31 @@ export function ProductCard({ product, className }: ProductCardProps) {
         </div>
       </Link>
 
-      {/* Color swatches */}
+      {/* Color swatches — Zalando sharp-edge: squares, not pills */}
       <div className="flex gap-1.5 mb-1.5">
         {product.colors.map((color) => (
           <button
             key={color.hex}
-            className="w-3 h-3 rounded-full border border-black/10"
+            className="w-3 h-3 border border-[#D2D8DD]"
             style={{ backgroundColor: color.hex }}
             aria-label={color.name}
           />
         ))}
       </div>
 
-      {/* Price */}
-      <div className="flex items-center gap-2">
-        <span className="text-[14px] font-medium">{product.price} zl</span>
+      {/* Price — Zalando hierarchy via weight (650), not size; sale red #DA0410 */}
+      <div className="flex items-baseline gap-2">
+        <span className="text-[16px] font-semibold leading-6 text-black">
+          {product.price} PLN
+        </span>
         {product.originalPrice && (
-          <span className="text-xs text-warm-gray line-through">
-            {product.originalPrice} zl
+          <span className="text-[14px] text-[#5C6169] line-through">
+            {product.originalPrice} PLN
+          </span>
+        )}
+        {product.originalPrice && product.originalPrice > product.price && (
+          <span className="text-[12px] font-semibold text-[#DA0410] uppercase tracking-wide">
+            -{Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}%
           </span>
         )}
       </div>
