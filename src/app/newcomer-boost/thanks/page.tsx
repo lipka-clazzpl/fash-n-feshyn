@@ -28,8 +28,8 @@ export default function ThanksPage() {
           <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-12 max-w-xl mx-auto">
             Wpisaliśmy Cię na listę oczekujących programu{" "}
             <span className="font-medium text-charcoal">Newcomer Boost</span>.
-            Damy znać gdy ruszamy (sierpień 2026 ±2 tyg.) — pierwsze 100 osób
-            dostanie kod aktywacyjny.
+            Damy znać gdy ruszamy w sierpniu — pierwsze 100 osób dostanie kod
+            aktywacyjny.
           </p>
 
           <div className="bg-white border border-cream-dark rounded-lg p-6 md:p-8 text-left max-w-xl mx-auto mb-10">
@@ -39,10 +39,7 @@ export default function ThanksPage() {
             <ol className="space-y-4 text-[15px] leading-6 text-charcoal">
               <li className="flex gap-3">
                 <span className="font-medium text-charcoal/60 shrink-0">01</span>
-                <span>
-                  Czekamy aż uruchomimy program (sierpień 2026, plus-minus
-                  2 tygodnie).
-                </span>
+                <span>Czekamy aż uruchomimy program w sierpniu.</span>
               </li>
               <li className="flex gap-3">
                 <span className="font-medium text-charcoal/60 shrink-0">02</span>

@@ -23,16 +23,16 @@ export default function NewcomerBoostPage() {
       <section className="px-4 md:px-8 lg:px-12 py-12 md:py-16">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray mb-5">
-            Nowy program dla newcomer sprzedawców · Sierpień 2026
+            Nowy program dla newcomer sprzedawców · Sierpień
           </p>
           <h1 className="text-[36px] md:text-[48px] font-normal text-charcoal mb-6 leading-[1.05]">
-            100 PLN na reklamy.<br />Twój pierwszy miesiąc.
+            Twój pierwszy miesiąc.<br />100 PLN na reklamy.
           </h1>
           <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-10 max-w-2xl mx-auto">
             Pierwsze 30 dni jako sprzedawca są najtrudniejsze — produkty nikt
             nie znajduje. Uruchamiamy program{" "}
             <strong className="font-medium text-charcoal">Newcomer Boost</strong>{" "}
-            w sierpniu 2026: <strong className="font-medium text-charcoal">100 PLN budżetu</strong>{" "}
+            w sierpniu: <strong className="font-medium text-charcoal">100 PLN budżetu</strong>{" "}
             na Promoted Listings dla pierwszych 100 zgłoszeń. Zapisz się — dam
             Ci znać gdy ruszamy.
           </p>
@@ -109,7 +109,7 @@ export default function NewcomerBoostPage() {
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
                   Twój wniosek trafia na listę. Pierwsze 100 zgłoszeń dostaje
-                  kod aktywacyjny gdy ruszamy w sierpniu 2026.
+                  kod aktywacyjny gdy ruszamy w sierpniu.
                 </p>
               </div>
             </li>
