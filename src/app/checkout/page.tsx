@@ -159,7 +159,7 @@ export default function CheckoutPage() {
                       <p className="text-xs text-warm-gray">Qty: {item.quantity}</p>
                     </div>
                     <span className="text-sm font-medium text-charcoal">
-                      {(item.product.price * item.quantity).toFixed(0)} zl
+                      {(item.product.price * item.quantity).toFixed(0)} PLN
                     </span>
                   </div>
                 ))}
@@ -168,17 +168,17 @@ export default function CheckoutPage() {
               <div className="space-y-2 pt-4 border-t border-cream-dark">
                 <div className="flex justify-between text-sm">
                   <span className="text-warm-gray">Subtotal</span>
-                  <span className="font-medium">{subtotal.toFixed(0)} zl</span>
+                  <span className="font-medium">{subtotal.toFixed(0)} PLN</span>
                 </div>
                 <div className="flex justify-between text-sm">
                   <span className="text-warm-gray">Shipping</span>
                   <span className="font-medium">
-                    {shipping === 0 ? "Free" : `${shipping.toFixed(2)} zl`}
+                    {shipping === 0 ? "Free" : `${shipping.toFixed(2)} PLN`}
                   </span>
                 </div>
                 <div className="flex justify-between text-sm pt-3 border-t border-cream-dark mt-3">
                   <span className="font-medium text-charcoal">Total</span>
-                  <span className="font-medium text-charcoal text-lg">{total.toFixed(2)} zl</span>
+                  <span className="font-medium text-charcoal text-lg">{total.toFixed(2)} PLN</span>
                 </div>
               </div>
             </div>

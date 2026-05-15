@@ -56,9 +56,9 @@ const materialOptions: { value: ShoeMaterial; label: string }[] = [
 ];
 
 const priceOptions: { value: PriceRange; label: string }[] = [
-  { value: "under-100", label: "Under 199 zl" },
-  { value: "100-130", label: "199 - 399 zl" },
-  { value: "over-130", label: "Over 399 zl" },
+  { value: "under-100", label: "Under 199 PLN" },
+  { value: "100-130", label: "199 - 399 PLN" },
+  { value: "over-130", label: "Over 399 PLN" },
 ];
 
 function FilterSection({

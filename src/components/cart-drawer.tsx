@@ -58,7 +58,7 @@ export function CartDrawer({
         <div className="px-4 py-3 bg-cream-light text-center">
           {remaining > 0 ? (
             <p className="text-xs text-warm-gray">
-              Spend {remaining.toFixed(0)} zl more to earn free shipping!
+              Wydaj jeszcze {remaining.toFixed(0)} PLN i odbierz darmową dostawę!
             </p>
           ) : (
             <p className="text-xs text-warm-gray">
@@ -135,7 +135,7 @@ export function CartDrawer({
                           </button>
                         </div>
                         <span className="text-sm font-medium">
-                          {(item.product.price * item.quantity).toFixed(0)} zl
+                          {(item.product.price * item.quantity).toFixed(0)} PLN
                         </span>
                       </div>
                     </div>
@@ -151,7 +151,7 @@ export function CartDrawer({
           <div className="px-4 py-4 border-t">
             <div className="flex justify-between mb-3">
               <span className="text-sm font-medium">Subtotal</span>
-              <span className="text-sm font-medium">{subtotal.toFixed(0)} zl</span>
+              <span className="text-sm font-medium">{subtotal.toFixed(0)} PLN</span>
             </div>
             <p className="text-xs text-warm-gray mb-3">
               Shipping and taxes calculated at checkout.
