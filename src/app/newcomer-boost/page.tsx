@@ -14,7 +14,7 @@ export default function NewcomerBoostPage() {
       <div className="border-b border-cream-dark bg-white">
         <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-3">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray">
-            Panel sprzedawcy · Nadchodzące programy
+            Panel sprzedawcy · Promocje
           </p>
         </div>
       </div>
@@ -23,18 +23,18 @@ export default function NewcomerBoostPage() {
       <section className="px-4 md:px-8 lg:px-12 py-12 md:py-16">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray mb-5">
-            Nowy program dla newcomer sprzedawców · Sierpień
+            Program dla newcomer sprzedawców · Aktywacja w 24-48h
           </p>
           <h1 className="text-[36px] md:text-[48px] font-normal text-charcoal mb-6 leading-[1.05]">
             Twój pierwszy miesiąc.<br />100 PLN na reklamy.
           </h1>
           <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-10 max-w-2xl mx-auto">
             Pierwsze 30 dni jako sprzedawca są najtrudniejsze — produkty nikt
-            nie znajduje. Uruchamiamy program{" "}
+            nie znajduje. W programie{" "}
             <strong className="font-medium text-charcoal">Newcomer Boost</strong>{" "}
-            w sierpniu: <strong className="font-medium text-charcoal">100 PLN budżetu</strong>{" "}
-            na Promoted Listings dla pierwszych 100 zgłoszeń. Zapisz się — dam
-            Ci znać gdy ruszamy.
+            dorzucamy <strong className="font-medium text-charcoal">100 PLN budżetu</strong>{" "}
+            na Promoted Listings. Złóż wniosek — sprawdzimy Twoje konto i
+            aktywujemy kod w 24-48h.
           </p>
 
           {/* Primary CTA — click-to-activate */}
@@ -43,10 +43,10 @@ export default function NewcomerBoostPage() {
             prefetch={false}
             className="btn-cta inline-flex !text-[13px] !px-10 !py-3.5"
           >
-            Zapisz się na BOOST
+            Złóż wniosek o BOOST
           </Link>
           <p className="text-[12px] text-warm-gray mt-4">
-            Jedno kliknięcie · Zero zobowiązań · Zapisz się na listę
+            Jedno kliknięcie · Zero zobowiązań · Aktywujemy w 24-48h
           </p>
         </div>
       </section>
@@ -105,11 +105,11 @@ export default function NewcomerBoostPage() {
               </span>
               <div>
                 <p className="text-[15px] font-medium text-charcoal mb-1">
-                  Klikasz &quot;Zapisz się&quot;
+                  Klikasz &quot;Złóż wniosek&quot;
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
-                  Twój wniosek trafia na listę. Pierwsze 100 zgłoszeń dostaje
-                  kod aktywacyjny gdy ruszamy w sierpniu.
+                  Sprawdzamy Twoje konto (≤ 3 mies., 5+ aktywnych listingów).
+                  Damy znać w 24-48h mailem i w panelu sprzedawcy.
                 </p>
               </div>
             </li>
@@ -119,10 +119,11 @@ export default function NewcomerBoostPage() {
               </span>
               <div>
                 <p className="text-[15px] font-medium text-charcoal mb-1">
-                  Wystarczy, że masz konto ≤ 3 miesiące + 5 aktywnych listingów
+                  Dostajesz kod aktywacyjny 100 PLN w panelu reklam
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
-                  Sprawdzamy automatycznie z panelu. Brak dodatkowych formularzy.
+                  Kod ważny 60 dni od dnia aktywacji. Bez karty, bez zaliczki —
+                  budżet z BOOST pokrywa koszt reklam.
                 </p>
               </div>
             </li>
@@ -132,7 +133,7 @@ export default function NewcomerBoostPage() {
               </span>
               <div>
                 <p className="text-[15px] font-medium text-charcoal mb-1">
-                  Gdy ruszamy — odpalisz Promoted Listings z BOOST budżetem
+                  Odpalasz Promoted Listings — 100 PLN startujesz od zaraz
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
                   100 PLN starcza średnio na 200-400 wyświetleń listingu w
@@ -148,17 +149,17 @@ export default function NewcomerBoostPage() {
       <section className="bg-charcoal text-white px-4 md:px-8 lg:px-12 py-12 md:py-14">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-white/60 mb-4">
-            Jedno kliknięcie · Lista oczekujących
+            Aktywacja w 24-48h · Bez karty
           </p>
           <h2 className="text-[24px] md:text-[28px] font-normal mb-6">
-            Wpisz się — daj znać że tego chcesz.
+            Złóż wniosek — odpal Promoted Listings.
           </h2>
           <Link
             href="/newcomer-boost/thanks"
             prefetch={false}
             className="btn-cta-outline !text-[13px] !px-10 !py-3.5 inline-flex !bg-white !text-charcoal !border-white hover:!bg-cream-light"
           >
-            Zapisz się na BOOST
+            Złóż wniosek o BOOST
           </Link>
         </div>
       </section>
