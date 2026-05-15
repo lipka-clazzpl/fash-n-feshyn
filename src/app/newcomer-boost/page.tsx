@@ -108,8 +108,8 @@ export default function NewcomerBoostPage() {
                   Klikasz &quot;Złóż wniosek&quot;
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
-                  Sprawdzamy Twoje konto (≤ 3 mies., 5+ aktywnych listingów).
-                  Damy znać w 24-48h mailem i w panelu sprzedawcy.
+                  Sprawdzamy Twoje konto. W ciągu dwóch dni potwierdzimy
+                  mailowo i w panelu.
                 </p>
               </div>
             </li>

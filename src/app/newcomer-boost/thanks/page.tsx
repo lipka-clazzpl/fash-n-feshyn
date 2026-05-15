@@ -28,8 +28,7 @@ export default function ThanksPage() {
           <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-12 max-w-xl mx-auto">
             Otrzymaliśmy Twój wniosek o{" "}
             <span className="font-medium text-charcoal">Newcomer Boost</span>.
-            Sprawdzamy Twoje konto i aktywujemy kod w 24-48h. Powiadomimy
-            mailem i w panelu sprzedawcy.
+            W ciągu dwóch dni potwierdzimy mailowo i w panelu.
           </p>
 
           <div className="bg-white border border-cream-dark rounded-lg p-6 md:p-8 text-left max-w-xl mx-auto mb-10">
@@ -40,15 +39,14 @@ export default function ThanksPage() {
               <li className="flex gap-3">
                 <span className="font-medium text-charcoal/60 shrink-0">01</span>
                 <span>
-                  Sprawdzamy Twoje konto (≤ 3 mies. aktywności, 5+ aktywnych
-                  listingów).
+                  Sprawdzamy Twoje konto.
                 </span>
               </li>
               <li className="flex gap-3">
                 <span className="font-medium text-charcoal/60 shrink-0">02</span>
                 <span>
-                  W ciągu 24-48h dostajesz kod aktywacyjny 100 PLN — mailem
-                  i jako notyfikacja w panelu sprzedawcy.
+                  W ciągu dwóch dni potwierdzimy mailowo i w panelu — dostaniesz
+                  kod aktywacyjny 100 PLN.
                 </span>
               </li>
               <li className="flex gap-3">
