@@ -29,12 +29,12 @@ export default function NewcomerBoostPage() {
             Twój pierwszy miesiąc.<br />100 PLN na reklamy.
           </h1>
           <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-10 max-w-2xl mx-auto">
-            Pierwsze 30 dni jako sprzedawca są najtrudniejsze — produkty nikt
-            nie znajduje. W programie{" "}
+            Pierwsze 30 dni jako sprzedawca są najtrudniejsze — produktów
+            nikt nie znajduje. W programie{" "}
             <strong className="font-medium text-charcoal">Newcomer Boost</strong>{" "}
             dorzucamy <strong className="font-medium text-charcoal">100 PLN budżetu</strong>{" "}
-            na Promoted Listings. Złóż wniosek — sprawdzimy Twoje konto i
-            aktywujemy kod w 24-48h.
+            na Promoted Listings. Złóż wniosek — w ciągu dwóch dni
+            potwierdzimy mailowo i w panelu.
           </p>
 
           {/* Primary CTA — click-to-activate */}
