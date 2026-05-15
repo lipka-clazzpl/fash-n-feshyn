@@ -14,7 +14,7 @@ export default function NewcomerBoostPage() {
       <div className="border-b border-cream-dark bg-white">
         <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-3">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray">
-            Panel sprzedawcy · Promocje
+            Panel sprzedawcy · Nadchodzące programy
           </p>
         </div>
       </div>
@@ -30,9 +30,11 @@ export default function NewcomerBoostPage() {
           </h1>
           <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-10 max-w-2xl mx-auto">
             Pierwsze 30 dni jako sprzedawca są najtrudniejsze — produkty nikt
-            nie znajduje. Włącz program <strong className="font-medium text-charcoal">Newcomer Boost</strong>,
-            a my dorzucimy <strong className="font-medium text-charcoal">100 PLN budżetu</strong> na Promoted
-            Listings.
+            nie znajduje. Uruchamiamy program{" "}
+            <strong className="font-medium text-charcoal">Newcomer Boost</strong>{" "}
+            w sierpniu 2026: <strong className="font-medium text-charcoal">100 PLN budżetu</strong>{" "}
+            na Promoted Listings dla pierwszych 100 zgłoszeń. Zapisz się — dam
+            Ci znać gdy ruszamy.
           </p>
 
           {/* Primary CTA — click-to-activate */}
@@ -41,10 +43,10 @@ export default function NewcomerBoostPage() {
             prefetch={false}
             className="btn-cta inline-flex !text-[13px] !px-10 !py-3.5"
           >
-            Aktywuj 100 PLN BOOST
+            Zapisz się na BOOST
           </Link>
           <p className="text-[12px] text-warm-gray mt-4">
-            Jedno kliknięcie · Zero zaliczki · Zero karty
+            Jedno kliknięcie · Zero zobowiązań · Zapisz się na listę
           </p>
         </div>
       </section>
@@ -103,11 +105,11 @@ export default function NewcomerBoostPage() {
               </span>
               <div>
                 <p className="text-[15px] font-medium text-charcoal mb-1">
-                  Klikasz &quot;Aktywuj&quot;
+                  Klikasz &quot;Zapisz się&quot;
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
-                  Twój wniosek o BOOST trafia na listę. Pierwsze 100 zgłoszeń
-                  dostaje kod aktywacyjny w sierpniu.
+                  Twój wniosek trafia na listę. Pierwsze 100 zgłoszeń dostaje
+                  kod aktywacyjny gdy ruszamy w sierpniu 2026.
                 </p>
               </div>
             </li>
@@ -130,7 +132,7 @@ export default function NewcomerBoostPage() {
               </span>
               <div>
                 <p className="text-[15px] font-medium text-charcoal mb-1">
-                  Ruszasz Promoted Listings — koszt z BOOST budżetu
+                  Gdy ruszamy — odpalisz Promoted Listings z BOOST budżetem
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
                   100 PLN starcza średnio na 200-400 wyświetleń listingu w
@@ -146,17 +148,17 @@ export default function NewcomerBoostPage() {
       <section className="bg-charcoal text-white px-4 md:px-8 lg:px-12 py-12 md:py-14">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-white/60 mb-4">
-            Jedno kliknięcie · Zero zaliczki
+            Jedno kliknięcie · Lista oczekujących
           </p>
           <h2 className="text-[24px] md:text-[28px] font-normal mb-6">
-            Gotowy zaktywować swój BOOST?
+            Wpisz się — daj znać że tego chcesz.
           </h2>
           <Link
             href="/newcomer-boost/thanks"
             prefetch={false}
             className="btn-cta-outline !text-[13px] !px-10 !py-3.5 inline-flex !bg-white !text-charcoal !border-white hover:!bg-cream-light"
           >
-            Aktywuj 100 PLN BOOST
+            Zapisz się na BOOST
           </Link>
         </div>
       </section>
