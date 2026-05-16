@@ -29,7 +29,7 @@ export default function NewcomerBoostPage() {
             Twój pierwszy miesiąc.<br />100 PLN na reklamy.
           </h1>
           <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-10 max-w-2xl mx-auto">
-            Pierwsze 30 dni jako sprzedawca są najtrudniejsze — Twoich ofert
+            Pierwsze 30 dni dla sprzedawcy są najtrudniejsze — Twoich ofert
             nikt nie znajduje. Uruchamiamy program{" "}
             <strong className="font-medium text-charcoal">Newcomer Boost</strong>{" "}
             w czerwcu 2026:{" "}
@@ -134,7 +134,7 @@ export default function NewcomerBoostPage() {
               </span>
               <div>
                 <p className="text-[15px] font-medium text-charcoal mb-1">
-                  Gdy ruszymy — odpalisz promowane oferty z budżetem BOOST
+                  Gdy ruszymy — uruchomisz promowane oferty z budżetem BOOST
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
                   Wyniki śledzisz w panelu reklam — koszt wyświetlenia

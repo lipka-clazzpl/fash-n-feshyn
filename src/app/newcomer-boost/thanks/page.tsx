@@ -23,13 +23,13 @@ export default function ThanksPage() {
             Status · Zapisany na listę
           </p>
           <h1 className="text-[36px] md:text-[44px] font-normal text-charcoal mb-5 leading-[1.05]">
-            Zapisane na listę ✓
+            Zapisaliśmy Cię na listę ✓
           </h1>
           <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-12 max-w-xl mx-auto">
             Wpisaliśmy Cię na listę oczekujących programu{" "}
             <span className="font-medium text-charcoal">Newcomer Boost</span>.
-            Damy znać gdy ruszymy (czerwiec 2026, plus-minus 2 tygodnie) —
-            pierwsze 100 osób dostanie kod aktywacyjny.
+            Damy znać gdy ruszymy — pierwsze 100 osób dostanie kod
+            aktywacyjny.
           </p>
 
           <div className="bg-white border border-cream-dark rounded-lg p-6 md:p-8 text-left max-w-xl mx-auto mb-10">
@@ -40,8 +40,8 @@ export default function ThanksPage() {
               <li className="flex gap-3">
                 <span className="font-medium text-charcoal/60 shrink-0">01</span>
                 <span>
-                  Czekamy aż uruchomimy program (czerwiec 2026, plus-minus
-                  2 tygodnie).
+                  Czekasz aż uruchomimy program — przewidywana data startu
+                  to czerwiec 2026.
                 </span>
               </li>
               <li className="flex gap-3">
@@ -54,7 +54,7 @@ export default function ThanksPage() {
               <li className="flex gap-3">
                 <span className="font-medium text-charcoal/60 shrink-0">03</span>
                 <span>
-                  Po aktywacji kod ważny 60 dni. Odpalisz promowane oferty —
+                  Po aktywacji kod ważny 60 dni. Uruchomisz promowane oferty —
                   koszt reklam z budżetu, nie z karty.
                 </span>
               </li>
