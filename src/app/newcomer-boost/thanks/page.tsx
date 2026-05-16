@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Aktywowane ✓ — Newcomer Boost · panel sprzedawcy",
-  description: "Twój BOOST został aktywowany.",
+  title: "Zapisane na listę ✓ — Newcomer Boost · panel sprzedawcy",
+  description: "Wpisany na listę oczekujących Newcomer Boost.",
 };
 
 export default function ThanksPage() {
@@ -12,7 +12,7 @@ export default function ThanksPage() {
       <div className="border-b border-cream-dark bg-white">
         <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-3">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray">
-            Panel sprzedawcy · Promocje · BOOST
+            Panel sprzedawcy · Nadchodzące programy · BOOST
           </p>
         </div>
       </div>
@@ -20,15 +20,16 @@ export default function ThanksPage() {
       <section className="px-4 md:px-8 lg:px-12 py-20 md:py-28">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray mb-5">
-            Status · Wniosek przyjęty
+            Status · Zapisany na listę
           </p>
           <h1 className="text-[36px] md:text-[44px] font-normal text-charcoal mb-5 leading-[1.05]">
-            Wniosek przyjęty ✓
+            Zapisane na listę ✓
           </h1>
           <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-12 max-w-xl mx-auto">
-            Otrzymaliśmy Twój wniosek o{" "}
+            Wpisaliśmy Cię na listę oczekujących programu{" "}
             <span className="font-medium text-charcoal">Newcomer Boost</span>.
-            W ciągu dwóch dni potwierdzimy mailowo i w panelu.
+            Damy znać gdy ruszymy (czerwiec 2026, plus-minus 2 tygodnie) —
+            pierwsze 100 osób dostanie kod aktywacyjny.
           </p>
 
           <div className="bg-white border border-cream-dark rounded-lg p-6 md:p-8 text-left max-w-xl mx-auto mb-10">
@@ -39,21 +40,22 @@ export default function ThanksPage() {
               <li className="flex gap-3">
                 <span className="font-medium text-charcoal/60 shrink-0">01</span>
                 <span>
-                  Sprawdzamy Twoje konto.
+                  Czekamy aż uruchomimy program (czerwiec 2026, plus-minus
+                  2 tygodnie).
                 </span>
               </li>
               <li className="flex gap-3">
                 <span className="font-medium text-charcoal/60 shrink-0">02</span>
                 <span>
-                  W ciągu dwóch dni potwierdzimy mailowo i w panelu — dostaniesz
-                  kod aktywacyjny 100 PLN.
+                  Damy znać w panelu i mailem — z kodem aktywacyjnym 100 PLN.
+                  Pierwsze 100 osób na liście.
                 </span>
               </li>
               <li className="flex gap-3">
                 <span className="font-medium text-charcoal/60 shrink-0">03</span>
                 <span>
-                  Kod ważny 60 dni od aktywacji. Wystartujesz Promoted
-                  Listings — koszt reklam z budżetu BOOST, nie z karty.
+                  Po aktywacji kod ważny 60 dni. Odpalisz promowane oferty —
+                  koszt reklam z budżetu, nie z karty.
                 </span>
               </li>
             </ol>

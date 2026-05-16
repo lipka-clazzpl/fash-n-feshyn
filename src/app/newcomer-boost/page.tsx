@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "100 PLN do reklam — Newcomer Boost · panel sprzedawcy",
   description:
-    "Bezpłatny budżet na promowanie listingów dla nowych sprzedawców (months 1-3). 60 dni na wykorzystanie.",
+    "Bezpłatny budżet na promowanie ofert dla początkujących sprzedawców (pierwsze 3 miesiące). 60 dni na wykorzystanie.",
 };
 
 export default function NewcomerBoostPage() {
@@ -14,7 +14,7 @@ export default function NewcomerBoostPage() {
       <div className="border-b border-cream-dark bg-white">
         <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-3">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray">
-            Panel sprzedawcy · Promocje
+            Panel sprzedawcy · Nadchodzące programy
           </p>
         </div>
       </div>
@@ -23,18 +23,19 @@ export default function NewcomerBoostPage() {
       <section className="px-4 md:px-8 lg:px-12 py-12 md:py-16">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-warm-gray mb-5">
-            Program dla newcomer sprzedawców · Aktywacja w 24-48h
+            Nowy program dla początkujących sprzedawców · Czerwiec 2026
           </p>
           <h1 className="text-[36px] md:text-[48px] font-normal text-charcoal mb-6 leading-[1.05]">
             Twój pierwszy miesiąc.<br />100 PLN na reklamy.
           </h1>
           <p className="text-[16px] md:text-[18px] leading-7 text-charcoal/85 mb-10 max-w-2xl mx-auto">
-            Pierwsze 30 dni jako sprzedawca są najtrudniejsze — produktów
-            nikt nie znajduje. W programie{" "}
+            Pierwsze 30 dni jako sprzedawca są najtrudniejsze — Twoich ofert
+            nikt nie znajduje. Uruchamiamy program{" "}
             <strong className="font-medium text-charcoal">Newcomer Boost</strong>{" "}
-            dorzucamy <strong className="font-medium text-charcoal">100 PLN budżetu</strong>{" "}
-            na Promoted Listings. Złóż wniosek — w ciągu dwóch dni
-            potwierdzimy mailowo i w panelu.
+            w czerwcu 2026:{" "}
+            <strong className="font-medium text-charcoal">100 PLN budżetu</strong>{" "}
+            na promowane oferty dla pierwszych 100 zgłoszeń. Zapisz się —
+            damy Ci znać gdy ruszymy.
           </p>
 
           {/* Primary CTA — click-to-activate */}
@@ -43,10 +44,10 @@ export default function NewcomerBoostPage() {
             prefetch={false}
             className="btn-cta inline-flex !text-[13px] !px-10 !py-3.5"
           >
-            Złóż wniosek o BOOST
+            Zapisz się na BOOST
           </Link>
           <p className="text-[12px] text-warm-gray mt-4">
-            Jedno kliknięcie · Zero zobowiązań · Aktywujemy w 24-48h
+            Jedno kliknięcie · Zero zobowiązań · Zapisz się na listę
           </p>
         </div>
       </section>
@@ -63,7 +64,7 @@ export default function NewcomerBoostPage() {
                 100 PLN
               </dd>
               <p className="text-[13px] leading-5 text-warm-gray mt-2">
-                na Promoted Listings — bez karty
+                na promowane oferty — bez karty
               </p>
             </div>
             <div className="md:border-l md:border-r md:border-cream-dark md:px-8">
@@ -71,10 +72,10 @@ export default function NewcomerBoostPage() {
                 Wymagania
               </dt>
               <dd className="text-[36px] font-normal text-charcoal mb-1 leading-none">
-                ≤ 3 mies.
+                do 3 mies.
               </dd>
               <p className="text-[13px] leading-5 text-warm-gray mt-2">
-                aktywne konto + 5 listingów
+                aktywne konto i 5 ofert
               </p>
             </div>
             <div>
@@ -105,11 +106,11 @@ export default function NewcomerBoostPage() {
               </span>
               <div>
                 <p className="text-[15px] font-medium text-charcoal mb-1">
-                  Klikasz &quot;Złóż wniosek&quot;
+                  Klikasz &quot;Zapisz się&quot;
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
-                  Sprawdzamy Twoje konto. W ciągu dwóch dni potwierdzimy
-                  mailowo i w panelu.
+                  Trafiasz na listę oczekujących. Pierwsze 100 zgłoszeń
+                  dostaje kod aktywacyjny gdy ruszymy w czerwcu 2026.
                 </p>
               </div>
             </li>
@@ -119,11 +120,11 @@ export default function NewcomerBoostPage() {
               </span>
               <div>
                 <p className="text-[15px] font-medium text-charcoal mb-1">
-                  Dostajesz kod aktywacyjny 100 PLN w panelu reklam
+                  Wystarczy, że Twoje konto ma do 3 miesięcy i 5 aktywnych ofert
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
-                  Kod ważny 60 dni od dnia aktywacji. Bez karty, bez zaliczki —
-                  budżet z BOOST pokrywa koszt reklam.
+                  Sprawdzamy automatycznie z panelu. Brak dodatkowych
+                  formularzy.
                 </p>
               </div>
             </li>
@@ -133,11 +134,11 @@ export default function NewcomerBoostPage() {
               </span>
               <div>
                 <p className="text-[15px] font-medium text-charcoal mb-1">
-                  Odpalasz Promoted Listings — 100 PLN startujesz od zaraz
+                  Gdy ruszymy — odpalisz promowane oferty z budżetem BOOST
                 </p>
                 <p className="text-[14px] leading-6 text-warm-gray">
-                  100 PLN starcza średnio na 200-400 wyświetleń listingu w
-                  Twojej kategorii. Mierzysz wyniki w panelu reklam.
+                  Wyniki śledzisz w panelu reklam — koszt wyświetlenia
+                  zależy od kategorii i konkurencji.
                 </p>
               </div>
             </li>
@@ -149,17 +150,17 @@ export default function NewcomerBoostPage() {
       <section className="bg-charcoal text-white px-4 md:px-8 lg:px-12 py-12 md:py-14">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-[11px] font-medium uppercase tracking-[0.6px] text-white/60 mb-4">
-            Aktywacja w 24-48h · Bez karty
+            Jedno kliknięcie · Lista oczekujących
           </p>
           <h2 className="text-[24px] md:text-[28px] font-normal mb-6">
-            Złóż wniosek — odpal Promoted Listings.
+            Wpisz się — daj nam znać, że tego chcesz.
           </h2>
           <Link
             href="/newcomer-boost/thanks"
             prefetch={false}
             className="btn-cta-outline !text-[13px] !px-10 !py-3.5 inline-flex !bg-white !text-charcoal !border-white hover:!bg-cream-light"
           >
-            Złóż wniosek o BOOST
+            Zapisz się na BOOST
           </Link>
         </div>
       </section>
